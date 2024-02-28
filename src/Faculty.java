@@ -41,4 +41,3 @@ class Faculty {
         System.out.println("Course " + courseCode + " not found in faculty " + facultyName);
     }
 }
-}
