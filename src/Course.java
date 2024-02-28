@@ -2,6 +2,7 @@ abstract class Course {
     protected String courseCode;
     protected String courseName;
     protected String professorName;
+    protected int rawCapacity;
     protected int capacity;
     protected int units;
     protected int examTimeYear;
@@ -25,6 +26,7 @@ abstract class Course {
         this.examTimeHour = examTimeHour;
         this.examTimeMinute = examTimeMinute;
         this.examDuration = examDuration;
+        this.rawCapacity=capacity;
     }
 
     public String getCourseCode() {
@@ -41,6 +43,9 @@ abstract class Course {
 
     public int getCapacity() {
         return capacity;
+    }
+    public int getRawCapacity() {
+        return rawCapacity;
     }
 
     public int getUnits() {
