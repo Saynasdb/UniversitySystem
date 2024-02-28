@@ -42,5 +42,10 @@ class Student {
     }
 
 
-    
+    public void listRegisteredCourses() {
+        System.out.println("Registered Courses for Student " + studentNumber + ":");
+        for (Course course : registeredCourses) {
+            System.out.println(course.getCourseCode() + " - " + course.getCourseName());
+        }
+    }
 }
