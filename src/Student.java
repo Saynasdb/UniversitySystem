@@ -11,5 +11,7 @@ class Student {
         this.studentNumber = studentNumber;
     }
 
-    
+    public String getStudentNumber() {
+        return studentNumber;
+    }
     }
