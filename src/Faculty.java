@@ -22,4 +22,23 @@ class Faculty {
         }
         System.out.println("Course " + courseCode + " not found in faculty " + facultyName);
     }
+
+    public void listCourses() {
+        System.out.println("Courses offered by Faculty " + facultyName + ":");
+        for (Course course : courses) {
+            System.out.println(course.getCourseCode() + " - " + course.getCourseName());
+        }
+    }
+
+    public void listStudentsInCourse(String courseCode) {
+        for (Course course : courses) {
+            if (course.getCourseCode().equals(courseCode)) {
+                System.out.println("Students in Course " + courseCode + " - " + course.getCourseName() + ":");
+                // Add functionality to list students here
+                return;
+            }
+        }
+        System.out.println("Course " + courseCode + " not found in faculty " + facultyName);
+    }
+}
 }
