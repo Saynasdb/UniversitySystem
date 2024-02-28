@@ -12,5 +12,14 @@ class Faculty {
     public void addCourse(Course course) {
         courses.add(course);
     }
-    
+    public void removeCourse(String courseCode) {
+        for (int i = 0; i < courses.size(); i++) {
+            if (courses.get(i).getCourseCode().equals(courseCode)) {
+                courses.remove(i);
+                System.out.println("Course " + courseCode + " removed successfully.");
+                return;
+            }
+        }
+        System.out.println("Course " + courseCode + " not found in faculty " + facultyName);
+    }
 }
