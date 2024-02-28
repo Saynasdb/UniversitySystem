@@ -73,6 +73,11 @@ abstract class Course {
             capacity--;
         }
     }
+    public void increaseCapacity() {
+        if (capacity < rawCapacity) {
+            capacity++;
+        }
+    }
 
     public boolean isAvailable() {
         return capacity > 0;
