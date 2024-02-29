@@ -40,4 +40,20 @@ class Faculty {
         }
         System.out.println("Course " + courseCode + " not found in faculty " + facultyName);
     }
+
+    public String getFacultyName() {
+        return facultyName;
+    }
+
+    public void setFacultyName(String facultyName) {
+        this.facultyName = facultyName;
+    }
+    public Course getCourse(String courseCode) {
+        for (Course course : courses) {
+            if (course.getCourseCode().equals(courseCode)) {
+                return course;
+            }
+        }
+        return null;
+    }
 }
