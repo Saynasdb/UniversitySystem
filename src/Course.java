@@ -87,6 +87,24 @@ abstract class Course {
         return examTimeYear + "-" + examTimeMonth + "-" + examTimeDay + " " +
                 examTimeHour + ":" + examTimeMinute + " for " + examDuration + " minutes";
     }
+
+    @Override
+    public String toString() {
+        return "Course{" +
+                "courseCode='" + courseCode + '\'' +
+                ", courseName='" + courseName + '\'' +
+                ", professorName='" + professorName + '\'' +
+                ", rawCapacity=" + rawCapacity +
+                ", capacity=" + capacity +
+                ", units=" + units +
+                ", examDuration=" + examDuration +
+                ", courseWeekDay=" + courseWeekDay +
+                ", courseDuration=" + courseDuration +
+                ", examDateTime=" + examDateTime +
+                ", courseTime=" + courseTime +
+                '}';
+    }
+
     public String getCourseTime() {
         return courseDay + "-" + courseTime + " for " + courseDuration + " minutes";
     }

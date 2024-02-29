@@ -26,7 +26,7 @@ class Faculty {
     public void listCourses() {
         System.out.println("Courses offered by Faculty " + facultyName + ":");
         for (Course course : courses) {
-            System.out.println(course.getCourseCode() + " - " + course.getCourseName());
+            System.out.println(course);
         }
     }
 
