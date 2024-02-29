@@ -23,11 +23,11 @@ abstract class Course {
     protected LocalTime courseTime;
 
 
-    public Course(String courseCode, String courseName, String professorName, int rawCapacity, int capacity, int units, int examTimeYear, int examTimeMonth, int examTimeDay, int examTimeHour, int examTimeMinute, int examDuration, int courseWeekDay, int courseHour, int courseMinute, int courseDuration) {
+    public Course(String courseCode, String courseName, String professorName, int capacity, int units, int examTimeYear, int examTimeMonth, int examTimeDay, int examTimeHour, int examTimeMinute, int examDuration, int courseWeekDay, int courseHour, int courseMinute, int courseDuration) {
         this.courseCode = courseCode;
         this.courseName = courseName;
         this.professorName = professorName;
-        this.rawCapacity = rawCapacity;
+        this.rawCapacity = capacity;
         this.capacity = capacity;
         this.units = units;
         this.examTimeYear = examTimeYear;
