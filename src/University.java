@@ -92,4 +92,85 @@ public class University {
         }
         System.out.println("Faculty " + facultyName + " not found.");
     }
+    public void listStudents() {
+        System.out.println("List of Students:");
+        for (Student student : students) {
+            System.out.println(student.getStudentNumber());
+        }
+    }
+    public void listStudentsInCourse(String courseCode) {
+        for (Faculty faculty : faculties) {
+
+        }
+    }
+    public void listStudentsInCourse(String facultyName, String courseCode) {
+        for (Faculty faculty : faculties) {
+            if (faculty.getFacultyName().equalsIgnoreCase(facultyName)) {
+                Course course = faculty.getCourse(courseCode);
+                if (course != null) {
+//                    System.out.println("Students in Course " + courseCode + " - " + course.getCourseName() + ":");
+                    faculty.listStudentsInCourse(courseCode, this);
+
+
+                    return;
+                } else {
+                    System.out.println("Course " + courseCode + " not found in " + facultyName);
+                    return;
+                }
+            }
+        }
+        System.out.println("Faculty " + facultyName + " not found.");
+    }
+
+    public void addStudentToCourse(String facultyName, String courseCode, String studentNumber) {
+        for (Faculty faculty : faculties) {
+            if (faculty.getFacultyName().equalsIgnoreCase(facultyName)) {
+                Course course = faculty.getCourse(courseCode);
+                if (course != null) {
+                    Student student = getStudent(studentNumber);
+                    if (student != null) {
+                        student.registerCourse(course);
+                        return;
+                    } else {
+                        System.out.println("Student " + studentNumber + " not found.");
+                        return;
+                    }
+                } else {
+                    System.out.println("Course " + courseCode + " not found in " + facultyName);
+                    return;
+                }
+            }
+        }
+        System.out.println("Faculty " + facultyName + " not found.");
+    }
+
+    public void removeStudentFromCourse(String facultyName, String courseCode, String studentNumber) {
+        for (Faculty faculty : faculties) {
+            if (faculty.getFacultyName().equalsIgnoreCase(facultyName)) {
+                Course course = faculty.getCourse(courseCode);
+                if (course != null) {
+                    Student student = getStudent(studentNumber);
+                    if (student != null) {
+                        student.unregisterCourse(courseCode);
+                        return;
+                    } else {
+                        System.out.println("Student " + studentNumber + " not found.");
+                        return;
+                    }
+                } else {
+                    System.out.println("Course " + courseCode + " not found in " + facultyName);
+                    return;
+                }
+            }
+        }
+        System.out.println("Faculty " + facultyName + " not found.");
+    }
+
+    public List<Faculty> getFaculties() {
+        return faculties;
+    }
+
+    public List<Student> getStudents() {
+        return students;
+    }
 }
