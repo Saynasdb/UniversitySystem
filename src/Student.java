@@ -6,19 +6,20 @@ class Student {
     private List<Course> registeredCourses = new ArrayList<>();
     private int totalUnits = 0;
     private int generalUnits = 0;
-    public static ArrayList<Student> students=new ArrayList<>();
+    public static ArrayList<Student> students = new ArrayList<>();
 
     public Student(String studentNumber) {
-        this.studentNumber = studentNumber;students.add(this);
+        this.studentNumber = studentNumber;
+        students.add(this);
     }
 
     public String getStudentNumber() {
         return studentNumber;
     }
 
-    public static Student getStudent(String studentNumber){
-        for(Student student:students){
-            if(student.getStudentNumber().equals(studentNumber)){
+    public static Student getStudent(String studentNumber) {
+        for (Student student : students) {
+            if (student.getStudentNumber().equals(studentNumber)) {
                 return student;
             }
         }
@@ -58,5 +59,21 @@ class Student {
         for (Course course : registeredCourses) {
             System.out.println(course.getCourseCode() + " - " + course.getCourseName());
         }
+    }
+
+    public String getStudentName() {
+        return  studentNumber;
+    }
+
+    public List<Course> getRegisteredCourses() {
+        return registeredCourses;
+    }
+
+    public int getTotalUnits() {
+        return totalUnits;
+    }
+
+    public int getGeneralUnits() {
+        return generalUnits;
     }
 }
