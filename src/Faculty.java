@@ -35,6 +35,24 @@ class Faculty {
             if (course.getCourseCode().equals(courseCode)) {
                 System.out.println("Students in Course " + courseCode + " - " + course.getCourseName() + ":");
                 // Add functionality to list students here
+
+                return;
+            }
+        }
+        System.out.println("Course " + courseCode + " not found in faculty " + facultyName);
+    }
+    public void listStudentsInCourse(String courseCode,University university) {
+        for (Course course : courses) {
+            if (course.getCourseCode().equals(courseCode)) {
+                System.out.println("Students in Course " + courseCode + " - " + course.getCourseName() + ":");
+                // Add functionality to list students here
+                for (Student student : university.getStudents()) {
+                    for (Course registeredCourse : student.getRegisteredCourses()) {
+                        if (registeredCourse.getCourseCode().equals(courseCode)) {
+                            System.out.println(student.getStudentNumber() + " - " + student.getStudentName());
+                        }
+                    }
+                }
                 return;
             }
         }
