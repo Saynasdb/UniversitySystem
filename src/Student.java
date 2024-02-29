@@ -6,13 +6,24 @@ class Student {
     private List<Course> registeredCourses = new ArrayList<>();
     private int totalUnits = 0;
     private int generalUnits = 0;
+    public static ArrayList<Student> students=new ArrayList<>();
 
     public Student(String studentNumber) {
-        this.studentNumber = studentNumber;
+        this.studentNumber = studentNumber;students.add(this);
     }
 
     public String getStudentNumber() {
         return studentNumber;
+    }
+
+    public static Student getStudent(String studentNumber){
+        for(Student student:students){
+            if(student.getStudentNumber().equals(studentNumber)){
+                return student;
+            }
+        }
+        return null;
+
     }
 
     private boolean checkTimeConflict(Course course1, Course course2) {
